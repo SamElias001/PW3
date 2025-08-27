@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pessoa</title>
+</head>
+<body>
+    <h1>Cadasttro de Pessoa</h1>
+
+    <form action="formCadastro">
+        <fieldset>
+            <legend>Dados Cadastrais</legend>
+
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" required><br><br>
+
+            <label for="dataNascimento">Data de Nascimento:</label><br>
+            <input type="date" id="dataNascimento" name="dataNascimento" required><br><br>
+
+            <label for="cpf">CPF:</label><br>
+            <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" required><br><br>
+
+            <label for="celular">celular:</label><br>
+            <input type="number" name="celular" id="celular" placeholder="(11) 91234-5678" required><br><br>
+
+            <label for="email">email:</label><br>
+            <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Endereço</legend>
+
+            <label for="cep">CEP:</label><br>
+            <input type="text" name="cep" id="cep" placeholder="00000-000" required onblur="buscarCEP()"><br><br>
+
+            <label for="logradouro">Logradouro:</label><br>
+            <input type="text" name="logradouro" id="logradouro" readonly><br><br>
+
+            <label for="numero">Número:</label><br>
+            <input type="text" name="numero" id="numero"><br><br>
+
+            <label for="complemento">Complemento:</label><br>
+            <input type="text" id="complemento" name="complemento"><br><br>
+
+            <label for="bairro">Bairoo:</label><br>
+            <input type="text" id="bairro" name="bairro" readonly><br><br>
+
+            <label for="localidade">Localidade:</label><br>
+            <input type="text" id="localidade" name="localidade" readonly><br><br>
+
+            <label for="uf">UF:</label><br>
+            <input type="text" id="uf" name="uf" readonly><br><br>
+        </fieldset>
+        <br><br><br>
+        <button type="submit">Salvar</button>
+        <button type="reset">Limpar</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
