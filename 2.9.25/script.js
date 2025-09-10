@@ -12,7 +12,7 @@ function carregarAlunos() {
             }
             // NEW: Converte a resposta para JSON
             return res.json();
-        })
+        }) 
         .then(dados => {
             // NEW: Verifica se houve erro na resposta
             if (dados.status === "erro") {
@@ -28,13 +28,12 @@ function carregarAlunos() {
                         <button onclick="editarAluno(${aluno.IDALUNO}, '${aluno.NOME}')">Editar</button>
                         <button onclick="excluirAluno(${aluno.IDALUNO})">Excluir</button>
                     </td>`;
-                        tabela.appendChild(linha);
+                tabela.appendChild(linha);
             });
         })
-        .catch(erro => {
-            console.error("Erro ao carregar alunos:", erro);
-            alert("Erro ao carregar a lista de alunos: " + erro.mensagem);
-        });
+        //.catch(erro => {
+        //    console.error("Erro ao carregar alunos:", erro);
+        //    alert("Erro ao carregar a lista de alunos: " + erro.mensagem);
+        //});
 }
-
 carregarAlunos();
