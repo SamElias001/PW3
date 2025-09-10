@@ -1,0 +1,40 @@
+const formulario = document.getElementById('formularioAluno');
+const tabela = document.getElementById('tabelaAlunos').querySelector('tbody');
+const campoId = document.getElementById('campoId');
+const campoNome = document.getElementById('campoNome');
+
+function carregarAlunos() {
+    fetch('listarAlunos.php')
+        .then(res => {
+            // NEW: Verifica se a resposta do servidor esta ok
+            if (!res.ok) {
+                throw new Error('Erro na resposta do servidor');
+            }
+            // NEW: Converte a resposta para JSON
+            return res.json();
+        })
+        .then(dados => {
+            // NEW: Verifica se houve erro na resposta
+            if (dados.status === "erro") {
+                throw new Error(dados.mensagem);
+            }
+            tabela.innerHTML = '';
+            dados.forEach(aluno => {
+                const linha = document.createElement('tr');
+                linha.innerHTML = `
+                    <td>${aluno.IDALUNO}</td>
+                    <td>${aluno.NOME}</td>
+                    <td>
+                        <button onclick="editarAluno(${aluno.IDALUNO}, '${aluno.NOME}')">Editar</button>
+                        <button onclick="excluirAluno(${aluno.IDALUNO})">Excluir</button>
+                    </td>`;
+                        tabela.appendChild(linha);
+            });
+        })
+        .catch(erro => {
+            console.error("Erro ao carregar alunos:", erro);
+            alert("Erro ao carregar a lista de alunos: " + erro.mensagem);
+        });
+}
+
+carregarAlunos();
