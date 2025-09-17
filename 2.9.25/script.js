@@ -37,3 +37,28 @@ function carregarAlunos() {
         //});
 }
 carregarAlunos();
+
+function excluirAluno(id) {
+    if (confirm('Tem certeza que deseja excluir este aluno?')) {
+        const dados = new FormData();
+        dados.append('id', id);
+
+        fetch('excluirAluno.php', { method: 'POST', body: dados})
+            .then(res => {
+                if(!res.ok) {
+                    throw new Error('Erro na resposta do servidor');
+                }
+                return res.json();
+            })
+            .then(retorno => {
+                alert(retorno.mensagem);
+                if(retorno.status === "ok") {
+                    carregarAlunos();
+                }
+            })
+            .catch(erro => {
+                console.error("Erro ao excluir aluno:", erro);
+                alert("Erro ao excluir o aluno: " + erro.mensagem);
+            });
+    }
+}
