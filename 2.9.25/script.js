@@ -31,10 +31,10 @@ function carregarAlunos() {
                 tabela.appendChild(linha);
             });
         })
-        //.catch(erro => {
-        //    console.error("Erro ao carregar alunos:", erro);
-        //    alert("Erro ao carregar a lista de alunos: " + erro.mensagem);
-        //});
+        .catch(erro => {
+            console.error("Erro ao carregar alunos:", erro);
+            alert("Erro ao carregar a lista de alunos: " + erro.mensagem);
+        });
 }
 carregarAlunos();
 
@@ -62,3 +62,40 @@ function excluirAluno(id) {
             });
     }
 }
+
+function editarAluno(id, nome) {
+    campoId.value = id;
+    campoNome.value = nome;
+}
+
+// Evento que é acionado quando o formulário é enviado
+formulario.addEventListener('submit', e => {
+    // Impede o comportamento padrão do formulário
+    e.preventDefault();
+
+    const dados = new FormData();
+    dados.append('id', campoId.value);
+    dados.append('nome', campoNome.value);
+
+    const url = campoId.value ? 'alterarAluno.php' : 'inserirAluno.php';
+
+    fetch(url, {method: 'POST', body: dados})
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('Erro na resposta do servidor');
+            }
+            return res.json();
+        })
+        .then(retorno => {
+            alert(retorno.mensagem);
+            if (retorno.status === "ok") {
+                formulario.reset();
+                campoId.value = '';
+                carregarAlunos();
+            }
+        })
+        .catch(erro => {
+            console.error("Erro ao processar a requisição:", erro);
+            alert("Erro ao processar a requisição: " + erro.mensagem);
+        });
+});

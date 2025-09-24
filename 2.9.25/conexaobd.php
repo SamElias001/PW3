@@ -15,7 +15,7 @@ try {
     $connection_status = $pdo->getAttribute(PDO::ATTR_CONNECTION_STATUS);
 } catch (PDOException $e) {
     header('Content-Type: application/json');
-    echo json_encodem([
+    echo json_encode([
         "status" => "erro",
         "mensagem" => "Erro ao conectar com o banco de dados: " . $e->getMessage()
     ]);
