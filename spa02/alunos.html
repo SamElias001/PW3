@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA - Gerenciamento de Alunos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <h1>Gerenciamento de Alunos</h1>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="cursos.html">Gerenciar Cursos</a></li>
+            <li><a href="alunos.html">Gerenciar Alunos</a></li>
+        </ul>
+    </nav>
+
+    <form id="formularioAluno">
+        <input type="hidden" id="campoId" name="id">
+        <input type="text" id="campoNome" name="nome" placeholder="Nome do aluno" required>
+        <select name="curso" id="campoCurso" required>
+            <option value="">Selecione um curso</option>
+        </select>
+        <button type="submit">Salvar</button>
+    </form>
+
+    <h2>Lista de Alunos</h2>
+
+    <table id="tabelaAlunos">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Curso</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script src="assets/js/alunos.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
