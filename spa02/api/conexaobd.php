@@ -3,7 +3,7 @@ error_reporting(0);
 ini_set('display_errors',0);
 
 $host = 'localhost'; 
-$dbname = 'spa';
+$dbname = 'spa02';
 $username = 'root';
 $password = '';
 
