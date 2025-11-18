@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <header>
         <div id="titulo">
@@ -26,20 +24,33 @@
     </header>
 
     <main>
-        <section id="cards">
-            <div class="card">
-                <h2>Gestão Eficiente</h2>
-                <p>Administre as notícias e categorias de forma pratíca e organizada</p>
-            </div>
-            <div class="card">
-                <h2>Publicações Dinâmicas</h2>
-                <p>Crie, edite e publique notícias com poucos cliques.</p>
-            </div>
-            <div class="card">
-                <h2>Análises e Resultas</h2>
-                <p>Acompanhe métricas e visualize o desempenho das publicações</p>
-            </div>
+        <section id="categorias">
+            <h1>Gerenciamento de Categorias</h1>
+            <p>Cadatre, edite e exclua categorias para organizar as notícias do portal</p>
+            <form action="" id="formularioCateoria">
+                <input type="hidden" id="campoId" name="id">
+                <input type="text" name="nome" id="campoNome" placeholder="Nome da Categoria" required>
+                <input type="submit" value="Salvar">
+            </form>
+
+            <table id="tabelaCategorias">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ID</td>
+                        <td>Nome</td>
+                        <td>Botões</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
+
     </main>
 
     <footer>
@@ -58,5 +69,4 @@
     </footer>
     <script src="./assets/js/script.js"></script>
 </body>
-
 </html>

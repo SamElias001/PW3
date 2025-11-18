@@ -122,3 +122,115 @@ footer {
     font-size: 30px;
     text-shadow: 3px 3px 3px var(--cor2);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--cor2);
+    color: var(--cor1);
+    gap: 24px;
+}
+
+.card {
+    width: 25%;
+    height: 60vh;
+    margin-top: 8vh;
+    background-color: var(--cor3);
+    color: var(--cor1);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    box-shadow: 4px 4px 10px var(--cor1);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    background-color: var(--cor1);
+    color: var(--cor2);
+}
+
+#categorias {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#categorias h1 {
+    font-size: 30px;
+}
+
+#categorias p {
+    font-size: 20px;
+}
+
+#formularioCategoria input[type="text"] {
+    border: 1px solid var(--cor1);
+    border-radius: 5px;
+    padding: 3px;
+    width: 260px;
+}
+
+#formularioCategoria input[type="text"]:focus {
+    background-color: var(--cor3);
+    outline: none;
+}
+
+#formularioCategoria input[type="submit"] {
+    background-color: var(--cor1);
+    color: var(--cor2);
+    padding: 5px 15px;
+    border: 2px solid var(--cor1);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1s all ease;
+} 
+
+#formularioCategoria input[type="submit"]:hover {
+    background-color: var(--cor3);
+    color: var(--cor1);
+}
+
+#formularioCategoria {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tabelaCategorias th, #tabelaCategorias td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid var(--cor3);
+}
+
+#tabelaCategorias th{
+    background-color: var(--cor3);
+    font-weight: bold;
+}
+
+#tabelaCategorias {
+    background-color: var(--cor3);
+    opacity: 0.8;
+}
