@@ -8,7 +8,7 @@ try {
         a.IDALUNO,
         a.NOME,
         a.IDCURSO,
-        c.NOME as CURSO NOME
+        c.NOME as CURSO_NOME
     FROM aluno a
     LEFT JOIN curso c ON a.IDCURSO = c.IDCURSO
     ORDER BY a.NOME

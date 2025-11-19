@@ -7,6 +7,6 @@
         header('Content-Type: application/json');
         echo json_encode($categorias);
     } catch (PDOException $erro) {
-        
+        // pegar continuação 
     }
 ?>

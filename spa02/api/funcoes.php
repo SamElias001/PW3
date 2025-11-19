@@ -19,7 +19,7 @@ function retornarSucesso($mensagem) {
 
 function verificarMetodoPost() {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        retornarErro('M[etodo não permitido');
+        retornarErro('Metodo não permitido');
     }
 }
 
