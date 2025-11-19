@@ -5,7 +5,7 @@ require_once '../funcoes.php';
 verificarMetodoPost();
 verificarCamposObrigatorios(['id']);
 
-$stmt = executarConsulta($pdo, "SELECT COUNT(*) FROM aluno WHERE IDCRUSO = :id", ['id' => $_POST['id']]);
+$stmt = executarConsulta($pdo, "SELECT COUNT(*) FROM aluno WHERE IDCURSO = :id", ['id' => $_POST['id']]);
 $numAlunos = $stmt->fetchColumn();
 
 if ($numAlunos > 0) {
